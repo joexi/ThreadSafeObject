@@ -16,6 +16,8 @@
 		1805012B173B822B00A00198 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1805012A173B822B00A00198 /* Default.png */; };
 		1805012D173B822B00A00198 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1805012C173B822B00A00198 /* Default@2x.png */; };
 		1805012F173B822B00A00198 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1805012E173B822B00A00198 /* Default-568h@2x.png */; };
+		18050139173B823800A00198 /* JXMultiThreadObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 18050136173B823800A00198 /* JXMultiThreadObject.m */; };
+		1805013A173B823800A00198 /* JXMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 18050138173B823800A00198 /* JXMutableArray.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,10 @@
 		1805012A173B822B00A00198 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		1805012C173B822B00A00198 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		1805012E173B822B00A00198 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		18050135173B823800A00198 /* JXMultiThreadObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXMultiThreadObject.h; sourceTree = "<group>"; };
+		18050136173B823800A00198 /* JXMultiThreadObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXMultiThreadObject.m; sourceTree = "<group>"; };
+		18050137173B823800A00198 /* JXMutableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXMutableArray.h; sourceTree = "<group>"; };
+		18050138173B823800A00198 /* JXMutableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXMutableArray.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,10 @@
 			children = (
 				18050127173B822B00A00198 /* AppDelegate.h */,
 				18050128173B822B00A00198 /* AppDelegate.m */,
+				18050135173B823800A00198 /* JXMultiThreadObject.h */,
+				18050136173B823800A00198 /* JXMultiThreadObject.m */,
+				18050137173B823800A00198 /* JXMutableArray.h */,
+				18050138173B823800A00198 /* JXMutableArray.m */,
 				1805011F173B822B00A00198 /* Supporting Files */,
 			);
 			path = JXMultiThreadObject;
@@ -166,6 +176,8 @@
 			files = (
 				18050125173B822B00A00198 /* main.m in Sources */,
 				18050129173B822B00A00198 /* AppDelegate.m in Sources */,
+				18050139173B823800A00198 /* JXMultiThreadObject.m in Sources */,
+				1805013A173B823800A00198 /* JXMutableArray.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

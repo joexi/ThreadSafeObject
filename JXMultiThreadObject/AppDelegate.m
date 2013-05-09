@@ -7,11 +7,23 @@
 //
 
 #import "AppDelegate.h"
-
+#import "JXMutableArray.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    JXMutableArray *ary = [[JXMutableArray alloc] init];
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    queue.maxConcurrentOperationCount = 10;
+    for (int i = 0; i < 200; i++) {
+        NSNumber *number = [NSNumber numberWithInt:i];
+        [queue addOperationWithBlock:^{
+            [ary addObject:number];
+        }];
+    }
+    [queue waitUntilAllOperationsAreFinished];
+    NSLog(@"%d",ary.count);
+    NSLog(@"%@",ary);
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
