@@ -1,8 +1,39 @@
 JXMultiThreadObject
 ===================
 
-a simple class helping using un-thread-safe class in a safe way
+A simple adapter to helping using un-thread-safe object in a safe way.
 
+# CODE
+using these methods to receive method call and redirect to the target object after thread safe processing.
+``` objc
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
+    return [[_container class] instanceMethodSignatureForSelector:aSelector];
+}
+
+- (void)forwardInvocation:(NSInvocation *)anInvocation
+{
+    NSMethodSignature *sig = [anInvocation valueForKey:@"_signature"];
+    const char *returnType = sig.methodReturnType;
+    //    NSLog(@"%@ = > %@",anInvocation.target, NSStringFromSelector(anInvocation.selector));
+    //    NSLog(@"%s",returnType);
+    if (!strcmp(returnType, "v")) {
+        /** the setter method just use async dispatch 
+         remove the barrier to make it faster when u r sure that invacations will not affect each other
+         */
+        dispatch_barrier_async(_dispatchQueue, ^{
+            [anInvocation invokeWithTarget:_container];
+        });
+    }
+    else {
+        /** all getter method need sync dispatch 
+         barrier make sure the result is correct
+         getter method need barrier in most ways unless u dont except this */
+        dispatch_barrier_sync(_dispatchQueue, ^{
+            [anInvocation invokeWithTarget:_container];
+        });
+    }
+}
+```
 # SAMPLE
 ``` objc
     JXMutableArray *ary = [[JXMutableArray alloc] init];
