@@ -58,6 +58,20 @@ JXMutableArray, you just need to declare the potocol and no need to implement th
 {
 }
 
+
+#import "JXMutableArray.h"
+
+@implementation JXMutableArray
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.container = [NSMutableArray array];
+    }
+    return self;
+}
+
+@end
 ```
 
 # HOW TO USE
