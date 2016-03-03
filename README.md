@@ -1,4 +1,4 @@
-JXMultiThreadObject
+ThreadSafeObject
 ===================
 
 A simple adapter to helping using un-thread-safe object in a safe way.
